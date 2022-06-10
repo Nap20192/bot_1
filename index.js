@@ -49,10 +49,10 @@ return bot.sendMessage(chatId, 'Я тебя не понимаю, попробу�
 bot.on('callback_query', async msg=>{
     const data = msg.data
     const chatId = msg.message.chat.id
-    if(data === chats[chatId]){ 
-        return bot.sendMessage(chatId,`${data}`)
+    if(data == chats[chatId]){ 
+        return bot.sendMessage(chatId,`угадал ${data}, ${chats[chatId]}`)
     }else{
-        return bot.sendMessage(chatId,`dddd${data}`)
+        return bot.sendMessage(chatId,`не угадал ${data}, ${chats[chatId]}`)
     }
 
 })
